@@ -1,0 +1,15 @@
+<script>
+  function program() {
+    let rsult = false;
+    const correct = String(Math.floor(Math.random() * 1000));
+    const answer = prompt(`${correct}를 입력해주세요.`);
+    result = correct === answer;
+    if (result) {
+      alert("정답.");
+    } else {
+      alert("오답.");
+    }
+  }
+
+  program();
+</script>
