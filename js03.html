@@ -1,5 +1,6 @@
 <script>
   //원시 vs 참조
+  //값 자체를 복사한다
   var num = 1;
   var num1 = num;
   num1 = 2;
@@ -7,11 +8,14 @@
   console.log(num1);
 
   //참조
+  //값이 저장된 주소를 복사한다.
+
   var array = [0, 0, 0, 0];
-  var array1 = array;
+  var array1 = array; //array 와 array1 의주소가 동일해졌기에 값이 동일, 얕은 복사
   array1[0] = 1;
   array1[1] = 2;
   array1[2] = 3;
   array1[3] = 4;
   console.log(array);
+  console.log(array1);
 </script>
