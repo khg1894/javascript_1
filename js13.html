@@ -1,0 +1,30 @@
+<script>
+  //클로저 closure
+  //
+  //   class Count {
+  //     constructor() {
+  //       this.count = 0;
+  //     }
+  //     increase() {
+  //       this.count = this.count + 1;
+  //       return this.count;
+  //     }
+  //   }
+  //   const count = new Count();
+  //   console.log(count.increase());
+  //   console.log(count.increase());
+  //   console.log(count.increase());
+  const makeCounter = () => {
+    let count = 0;
+    return () => {
+      //함수를 리턴하면 부모 함수의 변수를 가지고 있을 경우 부모함수의 변수가 어딘가에 살아남는다
+      count = count + 1;
+      return count;
+    };
+  };
+
+  const counter = makeCounter();
+  console.log(counter());
+  console.log(counter());
+  console.log(counter());
+</script>

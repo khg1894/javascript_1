@@ -1,0 +1,38 @@
+<script>
+  //settimeout 시한폭탄
+  //setintervla
+  // console.log(Date.now());
+  // setTimeout(()=>{
+  //     console.log("안녕");
+  //     console.log(Date.now());
+  //     });
+  //setInterval 자동 반복
+  // const myInter = setInterval(()=>{
+
+  // })
+
+  //promise
+  //값이 들어오기 전까지 안열림
+  //값이 들어오면 열 수 있음
+  //보통 통신시 사용
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("택배도착");
+      reject("택배분실");
+    }, 2000);
+  });
+
+  promise
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log("error");
+    })
+    .finally(() => {
+      console.log("finally"); //통신이 성공하든 실패하든 작동
+    })
+    .then((response) => {
+      console.log(response);
+    });
+</script>

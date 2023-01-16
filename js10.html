@@ -1,0 +1,50 @@
+<script>
+  // break, continue
+  //while, for 안에서 break가 선언되면 반복문이 종료된다.
+  const breakFunc = () => {
+    let count = 0;
+    while (count < 100) {
+      console.log(`${count} break테스트`);
+      if (count > 10) {
+        break;
+      }
+      count = count + 1;
+    }
+    console.log("break 빠져나옴");
+  };
+  //   breakFunc();
+
+  //array.Filter 원래 있던 배열에서 필터링 할때
+  //[1,2,3]에서 [] 반배열로 push 할때
+  // 조건이 홀수인 것만 필터링,
+  //짝수일 경우 continue, 홀수일때 push
+
+  const continueFunc = () => {
+    let count = 0;
+    while (count < 100) {
+      count = count + 1;
+      if (count == 98) {
+        continue;
+      }
+      console.log(`${count} continue테스트`);
+    }
+    console.log("continue 빠져나옴");
+  };
+  continueFunc();
+
+  //return
+  //함수안에서 return 이 선언되면 함수가 종료된다
+  //계산이 완료되서 더 이상 함수 내의 코드를 실행할 필요가 없을때
+  const returnFunc = () => {
+    let count = 0;
+    while (count < 100) {
+      console.log(`${count} return테스트`);
+      if (count > 10) {
+        break;
+      }
+      count = count + 1;
+    }
+    console.log("return 빠져나옴");
+  };
+  //   returnFunc();
+</script>
