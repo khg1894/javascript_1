@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content">내용</div>
+    <div id="btn" onclick="">커스텀 버튼</div>
+  </body>
+  <script>
+    // const func = () => console.log("함수");
+    // func;
+
+    // const btn = document.getElementById("btn");
+    // btn.onclick = () => {
+    //   const content = document.getElementById("content");
+    //   if(content.style.display == "none"){
+    //     content.style.display = "block"//초기상태
+    //   }else{
+    //     content.style.display = "none"//none이 작동한 상태
+    //   }
+    //   content.style.display = "none";
+    //   console.log(content.style.display);
+    // };
+    btn.addEventListener("click", () => {
+      const content = document.getElementById("content");
+      if (content.style.display == "none") {
+        content.style.display = "block"; //초기상태
+      } else {
+        content.style.display = "none"; //none이 작동한 상태
+      }
+      console.log(content.style.display);
+    });
+    // () => {
+    //   const content = document.getElementById("content");
+    //   if (content.style.display == "none") {
+    //     content.style.display = "block"; //초기상태
+    //   } else {
+    //     content.style.display = "none"; //none이 작동한 상태
+    //   }
+    //   console.log(content.style.display);
+    // }; //따로 함수명을 선언하지않더라도 이렇게 실행이가능하다
+  </script>
+</html>
