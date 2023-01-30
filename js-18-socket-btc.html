@@ -115,19 +115,21 @@
         const tradeData = data.data[0];
         usdtPrice.innerText = `$ ${tradeData.p}`;
 
+        //일정 개수가 초과할때마다 t바디 삭제
         if (tradeTbody.childElementCount > 10) {
           tradeTbody.removeChild(tradeTbody.lastChild);
         }
 
         const tr = document.createElement("tr");
+        //tr이라는 객체안에 아래의 내용이 포함되는 내용을 추가한다
         tr.innerHTML = `
       
          <td class="text-left">${tradeData.p}</td>
          <td>${tradeData.v}</td>
          <td class="text-right">${tradeData.S}</td>
           `;
-        tradeTbody.prepend(tr);
-      }
+        tradeTbody.prepend(tr); //그리고 트레이드 티바디라는곳에 추가한다(pretend)
+      } //pretend는 선택한 요소 즉 트레이드 티바디에 첫 부분부터 추가한다.
     };
   </script>
 </html>
