@@ -1,0 +1,36 @@
+  <script>
+    // 태그 가져오기
+    const usdtPrice = document.getElementById("usdtPrice");
+    const tradeTbody = document.getElementById("tradeTbody");
+
+    // 소켓 객체 생성하기
+    const bybitSocket = new WebSocket(
+      "wss://stream.bybit.com/contract/usdt/public/v3"
+    );
+
+    // 소켓 오픈하기
+    bybitSocket.onopen = () => {
+      bybitSocket.send(`{"op": "subscribe", "args": ["publicTrade.BTCUSDT"]}`);
+    };
+
+    // 메시지 처리하기
+    bybitSocket.onmessage = (e) => {
+      // 실제 데이터는 e.data.data[0]
+      console.log(JSON.parse(e.data));
+      const data = JSON.parse(e.data);
+
+      // topic이 publicTrade.BTCUSDT일 경우만 작동
+      if (data.topic == "publicTrade.BTCUSDT") {
+        const tradeData = data.data[0];
+        usdtPrice.innerText = `$ ${tradeData.p}`;
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+        <td class="text-left">${tradeData.p}</td>
+        <td>${tradeData.v}</td>
+        <td class="text-right">${tradeData.S}</td>
+        `;
+        tradeTbody.prepend(tr);
+      }
+    };
+  </script>
